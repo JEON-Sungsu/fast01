@@ -1,11 +1,14 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const IconButton = (props) => {
     return (
-        <View style={{ paddingHorizontal: 6 }}>
+        <TouchableOpacity
+            style={{ paddingHorizontal: 6 }}
+            hitSlop={{ top: 10, bottom: 10 }}
+        >
             <Ionicons name={props.name} size={24} color="black" />
-        </View>
+        </TouchableOpacity>
     );
 };
 
@@ -28,6 +31,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingVertical: 10,
+        backgroundColor: 'white',
     },
     title: {
         fontSize: 22,
